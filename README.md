@@ -1,4 +1,4 @@
-Git-Introduction-Part-II
-========================
+Linux Kernel Training - Part I
+==============================
 
-Introduction to Git remote repositories and collaboration
+Introduction to contributing patches to the Linux Kernel.
