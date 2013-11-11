@@ -349,6 +349,124 @@ KERN_EMERGENCY
 
 
         <section>
+
+          <section>
+            <h1>Let's Patch!</h1>
+          </section>
+
+          <section>
+            <h3>Navigate</h3>
+            <p>Go into a directory,</p>
+            <p>for example:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+cd net-next/drivers/net/ethernet
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Find Candidates</h3>
+            <p>Search for printk() expressions</p>
+            <p>with the <a href="https://www.kernel.org/pub/software/scm/git/docs/git-grep.html">grep command</a>:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git grep printk
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Compare</h3>
+            <p>Compare the lines from printk() with levels:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+amd/am79c961a.c:   printk(KERN_INFO "%s", version);
+            </code></pre>
+            <p>to those without levels:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+amd/7990.c:        printk ("TX rings:\n");
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Edit</h3>
+            <p>Use your favorite text editor to open the file</p>
+            <p>for example:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+vim amd/7990.c
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Modify</h3>
+            <p>Inspect the printk() lines</p>
+            <p>and decide what LEVEL to insert</p>
+          </section>
+
+          <section>
+            <h3>Save</h3>
+            <p>Save your modifications</p>
+            <p>and quit your text editor</p>
+          </section>
+
+          <section>
+            <h3>Stage</h3>
+            <p>Stage your modifications</p>
+            <p>with the git command</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git add amd/7990.c
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Commit</h3>
+            <p>Commit your modifications</p>
+            <p>with the git command</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git commit
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Commit Message</h3>
+            <p>Follow the model of other commit messages</p>
+            <p>from the <a href="http://patchwork.ozlabs.org/project/netdev/list/">netdev mailing list</a></p>
+          </section>
+
+          <section>
+            <h3>Commit Message</h3>
+            <p>For example </p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+drivers/net: use module_pcmcia_driver() in pcmcia drivers
+
+Use the new module_pcmcia_driver() macro to remove the boilerplate
+module init/exit code in the pcmcia drivers.
+
+Signed-off-by: H Hartley Sweeten &lthsweeten@visionengravers.com&gt
+Signed-off-by: Greg Kroah-Hartman &ltgregkh@linuxfoundation.org&gt
+            </code></pre>
+            <p>copied from commit</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+fdd3f29eddd1b7c26b3b42e3633afcb22a28fcb3
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Commit Message</h3>
+            <ul>
+              <li>The first line is the subject of the patch
+              <li>It is followed by paragraphs describing the details
+              <li>It ends with signed-off lines
+            </ul>
+          </section>
+
+          <section>
+            <h3>Commit Message</h3>
+            <p>If you are working in group,</p>
+            <p>use "Reviewed-by:" lines with</p>
+            <p>the names of your team members.</p>
+          </section>
+
+        </section>
+
+
+        <section>
           <h1>THE END</h1>
         </section>
 
