@@ -177,6 +177,29 @@ tmux -S /tmp/joyfulsession attach
         </section>
 
         <section>
+          <h3>Configure Git</h3>
+          <p>Identify yourself...<p>
+          <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git config --global user.email “myemail@gmail.com”
+git config --global user.name “My Name”
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Configure Git</h3>
+          <p>Configure it to be able to <a href="http://git-scm.com/docs/git-send-email">send email using an SMTP relay</a><p>
+          <p>for example, gmail:<p>
+          <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git config --global sendemail.smtpencryption tls
+git config --global sendemail.smtpserver smtp.gmail.com
+git config --global sendemail.smtpuser myemail@gmail.com
+git config --global sendemail.smtpserverport 587
+          </code></pre>
+          <p>You could also use other SMTP relays...<p>
+        </section>
+
+
+        <section>
           <h3>Clone the Repository...</h3>
           <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git
