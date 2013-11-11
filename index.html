@@ -463,8 +463,69 @@ fdd3f29eddd1b7c26b3b42e3633afcb22a28fcb3
             <p>the names of your team members.</p>
           </section>
 
+          <section>
+            <h3>Generate</h3>
+            <p>Generate the patch with the following commands</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+cd ~/net-next
+git format-patch --subject-prefix "PATCH net-next" --signoff master
+            </code></pre>
+            <p>This will create a file starting with "0001-"</p>
+          </section>
+
+          <section>
+            <h3>email</h3>
+            <p>email the patch to yourself:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git send-email -to another_one@email.com 0001-patchfile
+            </code></pre>
+            <p>Use an alternate email account,</p>
+            <p>since by default</p>
+            <p>git CCs your address in ~/.gitconfig</p>
+          </section>
+
+          <section>
+            <h3>Multiple Files?</h3>
+            <p>If you changed multiple files as part of a single patch,</p>
+            <p>put them in a directory to make the submission easier:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+mkdir mypatches
+cd mypatches
+git format-patch --signoff --subject-prefix net-next master
+cd ..
+git send-email patches -to myself@gmail.com
+            </code></pre>
+            <p>Choose the "all" option when prompted</p>
+          </section>
+
+          <section>
+            <h3>Submit</h3>
+            <p>Submit the patch by emailing it</p>
+            <p>to the proper maintainer.</p>
+            <p>For example, for net-dev:</p>
+            <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+git send-email -to netdev@vger.kernel.org 0001-patchfile
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Submit</h3>
+            <p>Consult the source tree <a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/MAINTAINERS?id=refs/tags/v3.12">MAINTAINERS</a> file</p>
+            <p>to find where you should submit the patch.</p>
+          </section>
+
+
         </section>
 
+
+        <section>
+           <h2>References</h2>
+            <ul>
+              <li><a href="http://www.kroah.com/lkn/">Linux Kernel in a Nutshell</a>
+              <li><a href="https://www.kernel.org/doc/Documentation/HOWTO">HOWTO Documentation</a>
+              <li><a href="http://kernelnewbies.org/">Kernel Newbies</a>
+            </ul>
+        </section>
 
         <section>
           <h1>THE END</h1>
